@@ -14,10 +14,6 @@ class Task(models.Model):
     last_name = models.CharField(max_length=100)
     id = models.AutoField(primary_key=True, auto_created=True)
 
-# class sign_up_list(models.Model):
-#     username = models.CharField(max_length=100)
-#     email = models.EmailField(max_length=100, null=True)
-#     password = models.CharField(max_length=50)
 
 class SignUpList(models.Model):
     username = models.CharField(max_length=100)
@@ -29,4 +25,4 @@ class SignUpList(models.Model):
     
 class LoginUpList(models.Model):
     username = models.CharField(max_length=100)
-    password = models
+    password = models.CharField(max_length=200)
