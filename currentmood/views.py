@@ -27,3 +27,6 @@ def loginn(request):
         )
         m_user.save()
     return render(request, 'loginn.html')
+
+def todo(request):
+    return render(request, 'todo.html')
