@@ -8,7 +8,7 @@ def signup(request):
         fnm = request.POST.get('fnm')
         email = request.POST.get('email')
         pwd = request.POST.get('pwd')
-        print(fnm, email, pwd)
+        # print(fnm, email, pwd)
         my_user = SignUpList.objects.create(
             username = fnm, email = email, password = pwd
         )
@@ -20,13 +20,21 @@ def loginn(request):
     if request.method == 'POST':
         fnm = request.POST.get('fnm')
         pwd = request.POST.get('pwd')
-        print(fnm, pwd)
+        # print(fnm, pwd)
         m_user = LoginUpList.objects.create(
             username = fnm, password = pwd
         )
         m_user.save()
-        return redirect('todo.html')
+        return redirect('/todo')
     return render(request, 'loginn.html')
 
 def todo(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        # print(title)
+        todo_task = TodoTask.objects.create(
+            title = title
+        )
+        todo_task.save()
+        return redirect('signup')
     return render(request, 'todo.html')

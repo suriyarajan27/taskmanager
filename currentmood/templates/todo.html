@@ -4,23 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'detail.css' %}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Font Awesome 5 Brands:wght@400&display=swap" />
     <title>TODO_LIST</title>
 </head>
 <body>
-    <div class="todo">
-        <div class="todobox">
+    <div class="loginn">
+        <div class="loginnbox">
             <form method="post">
                 {% csrf_token %}
                 <div class="heading">
-                    TODO_LIST
+                    TODOLIST
                 </div>
                 <div class="line">
-                    <div class="field">
-                        <input type="text" placeholder="ENTER YOUR TASK" required class="inp">
 
+                    <div class="field">
+                        <input type="text" placeholder="ENTER YOUR TASK" required class="inp" name="title">
+                    </div>
+
+                    <div class="field">
+                        <input type="submit" class="inp" value="ADD TASK">
                     </div>
 
                 </div>

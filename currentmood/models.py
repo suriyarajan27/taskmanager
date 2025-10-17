@@ -26,3 +26,6 @@ class SignUpList(models.Model):
 class LoginUpList(models.Model):
     username = models.CharField(max_length=100)
     password = models.CharField(max_length=200)
+
+class TodoTask(models.Model):
+    title = models.CharField(max_length=200)
