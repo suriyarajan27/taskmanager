@@ -25,6 +25,7 @@ def loginn(request):
             username = fnm, password = pwd
         )
         m_user.save()
+        return redirect('todo.html')
     return render(request, 'loginn.html')
 
 def todo(request):
